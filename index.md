@@ -4,8 +4,8 @@
   Even though I have been out of school for about 10 years and in a career not related to Computer Science, I decided I wanted to go back and improve myself and provide a better life for my family. Though this year and summer have been an extreme struggle for me, as I went through a house sale, a house rehabilitation, and a new baby born within all this time frame of finishing schooling.  The journey has so far taken close to 3 years now but managing school and having three children to provide for has taken most of my sanity. I have enjoyed the process and the classes I have taken and will be pursuing a career in Software Development.
 	
   The github experience has proven beneficial as a lot of prospective careers are looking for some sort of source tree/github/bitbucket-type experience. 
-### Algorithms
-# Code:
+# Algorithms
+### Code:
 ```c++
 // farkle.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
@@ -351,13 +351,15 @@ int main()
 
 
 
-### Database
-	For the databases section of enhancements, I have chosen to enhance the MongoDB and RestAPI project from CS-340. I have chosen this project because it was definitely the most complex database project that I have completed here at SNHU. My SQL classes were a bit more basic and I thought MongoDB was interesting because how it is similar to SQL but how it takes up a notch in the query formation. Also, with the RestfulAPI with Python it is a combination of many classes that I have taken here at SNHU in one project. 
+# Database
+	For the databases section of enhancements, I have chosen to enhance the MongoDB and RestAPI project from CS-340. I have chosen this project because it was definitely the most complex database project that I have completed here at SNHU. My SQL classes were a bit more basic and I thought MongoDB was interesting because how it is similar to SQL but how it takes up a notch in the query formation. Also, with the RestfulAPI with Python it is a combination of many classes that I have taken here at SNHU in one project.
+	
 	The final for the class was broken up into many files that were to be submitted for each section of the final. So, only a few queries were in each file or not connected to the Rest API at all. With this enhancement I have chosen to combine the final into one final and have it all work within the Rest API. This involved changing a bit of how the coding worked, and adding routing for each of the methods so that they can be addressable through an URL address. 
+	
 	While creating this enhancement, I was able to fix small mistakes and remove unneeded pieces of code that were left over from when I originally made it. The process also helps cement the ideas and methods of the RestApi and how easy it can be to work with. I had a few struggles with creating it as a few methods had more than one input to the get the required information. This originally was handled within the command line and would ask for input. I was able to get through this with multiple variables within the URL and the methods pull those variables out without issue. I had to experiment a few times to make sure that this would work correctly but everything works smoothly.  I plan to further comb through the code to make sure everything is working the best that it can and possibly add in some custom queries on top of the final queries. 
 
 
-# Code:
+### Code:
 ```python
 #!/usr/bin/python
 import json
