@@ -1,4 +1,9 @@
-## Welcome to Zach Muse's CS-499 ePortfolio!
+### Welcome to Zach Muse's CS-499 ePortfolio!
+
+ 	## The Journey
+  Even though I have been out of school for about 10 years and in a career not related to Computer Science, I decided I wanted to go back and improve myself and provide a better life for my family. Though this year and summer have been an extreme struggle for me, as I went through a house sale, a house rehabilitation, and a new baby born within all this time frame of finishing schooling.  The journey has so far taken close to 3 years now but managing school and having three children to provide for has taken most of my sanity. I have enjoyed the process and the classes I have taken and will be pursuing a career in Software Development.
+	
+  The github experience has proven beneficial as a lot of prospective careers are looking for some sort of source tree/github/bitbucket-type experience. 
 
 .
 
