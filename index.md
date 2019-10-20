@@ -5,13 +5,8 @@
 	
   The github experience has proven beneficial as a lot of prospective careers are looking for some sort of source tree/github/bitbucket-type experience. 
 
-.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
 ### Database
 ```python
 #!/usr/bin/python
