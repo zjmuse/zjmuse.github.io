@@ -175,12 +175,7 @@ void highScores(int curScore) {
 		
 		//Read Text file, line by line
 		while (getline(scores, line)) {
-			//std::cout << line << '\n';
-			//if (curScore == 0) {
-			//	std::cout << "Current High Score: " << line << endl;
-			//	scores.close();
-			//	break;
-			//}
+			
 			string highscore_str = line.substr(6);
 			highScore = stoi(highscore_str);
 		}
@@ -346,6 +341,8 @@ int main()
 		}
 	}
 }
+
+
 
 ```
 
