@@ -13,7 +13,7 @@ Syntax highlighted code block
 # Header 1
 ## Header 2
 ### Database
-```
+```python
 #!/usr/bin/python
 import json
 from bson import json_util
@@ -35,7 +35,6 @@ collection = db['stocks']
 def index():
     cursor = collection.find().limit(10)
     print(list(cursor))
-
 
 @route('/hello', method='GET')
 def get_hello():
