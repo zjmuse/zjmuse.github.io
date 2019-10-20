@@ -4,6 +4,349 @@
   Even though I have been out of school for about 10 years and in a career not related to Computer Science, I decided I wanted to go back and improve myself and provide a better life for my family. Though this year and summer have been an extreme struggle for me, as I went through a house sale, a house rehabilitation, and a new baby born within all this time frame of finishing schooling.  The journey has so far taken close to 3 years now but managing school and having three children to provide for has taken most of my sanity. I have enjoyed the process and the classes I have taken and will be pursuing a career in Software Development.
 	
   The github experience has proven beneficial as a lot of prospective careers are looking for some sort of source tree/github/bitbucket-type experience. 
+### Algorithms
+```c++
+// farkle.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+/*
+Zach Muse
+IT-312
+SNHU
+Original 6/22/2019 
+
+
+Version 2.0 Release
+
+rules.txt to be stored in .exe file path.
+
+*/
+
+
+#include "pch.h"
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <array>
+#include <vector>
+#include <fstream>
+
+using namespace std;
+
+//Roll Function
+int roll(int diceNum)
+{		
+	int side = (rand() % 6 + 1);
+	cout << "Die #" << diceNum+1 << " rolls a " << side << endl;
+	return(side);
+}
+//Score Function
+int score(int sideVal[], int& scoredDie, int rolls) {
+	
+	vector<int> sd;
+
+	//Each side's individual score
+	int score1 = 0, score2 = 0, score3 = 0, score4 = 0, score5 = 0, score6 = 0;
+	
+	int turnScore = 0;
+	//Used to keep track of # of times a side appears in a roll
+	int num1 = 0,
+		num2 = 0,
+		num3 = 0,
+		num4 = 0,
+		num5 = 0,
+		num6 = 0;
+	
+	for  (int i = 0; i < rolls; ++i) {
+		//Side 1
+		if (sideVal[i] == 1) {
+			score1 = score1 + 100;
+			++num1;
+			++scoredDie;
+			sd.push_back(sideVal[i]);
+			cout << "Score 100!\n";
+			if (num1 == 3) {
+				score1 = 1000;
+				cout << "Score 1000!!!\n";				
+			}
+		}
+		//Side 2
+		else if (sideVal[i] == 2) {
+			++num2;
+			
+			if (num2 == 3) {
+				score2 = 200;
+				scoredDie = scoredDie + 3;
+				sd.push_back(sideVal[i]);
+				sd.push_back(sideVal[i]);
+				sd.push_back(sideVal[i]);				
+				cout << "Score 200!\n";				
+			}
+		}
+		//Side 3
+		else if (sideVal[i] == 3) {
+			++num3;
+			if (num3 == 3) {
+				score3 = 300;
+				sd.push_back(sideVal[i]);
+				sd.push_back(sideVal[i]);
+				sd.push_back(sideVal[i]);
+				scoredDie = scoredDie + 3;
+				cout << "Score 300!\n";				
+			}
+		}
+		//Side 4
+		else if (sideVal[i] == 4) {
+			++num4;
+			if (num4 == 3) {
+				score4 = 400;
+				scoredDie = scoredDie + 3;
+				sd.push_back(sideVal[i]);
+				sd.push_back(sideVal[i]);
+				sd.push_back(sideVal[i]);
+				cout << "Score 400!\n";				
+			}
+		}
+		//Side 5
+		else if (sideVal[i] == 5) {
+			score5 = score5 + 50;
+			cout << "Score 50!\n";
+			++scoredDie;			
+			sd.push_back(sideVal[i]);
+			++num5;
+			if (num5 == 3) {
+				score5 = 500;				
+				cout << "Score 500!\n";				
+			}
+		}
+		//Side 6
+		else if (sideVal[i] == 6) {
+			++num6;
+			if (num6 == 3) {
+				score6 = 600;
+				sd.push_back(sideVal[i]);
+				sd.push_back(sideVal[i]);
+				sd.push_back(sideVal[i]);
+				scoredDie = scoredDie + 3;
+				cout << "Score 600!\n";				
+			}
+		}
+	}		
+		
+	cout << "Number of Scored dice: " << scoredDie << endl;
+	
+	turnScore = score1 + score2 + score3 + score4 + score5 + score6;
+	
+
+	cout << "Total for this roll: " << turnScore << endl;
+	vector<int>::iterator it;
+	for (it = sd.begin(); it != sd.end(); it++) {
+		cout << "Scoring numbers: "<< *it <<endl;
+	}
+	
+	return(turnScore);
+}
+//Load Rules
+void ruleText() {
+	string line;
+	ifstream rules("rules.txt"); //Text file in program location
+	if (rules.is_open()) {
+
+		//Read Text file, line by line
+		while (getline(rules, line)) {
+			cout << line << '\n';
+		}
+		rules.close();
+		//return 0;
+
+	}
+	//Display failure message if cannot find file
+	else cout << "Error loading file!";
+}
+
+//Load High Scores
+void highScores(int curScore) {
+	int highScore = 0;
+	string initials;
+	string line;
+	ifstream scores("scores.txt"); //Text file in program location
+	if (scores.is_open()) {
+		
+		//Read Text file, line by line
+		while (getline(scores, line)) {
+			//std::cout << line << '\n';
+			//if (curScore == 0) {
+			//	std::cout << "Current High Score: " << line << endl;
+			//	scores.close();
+			//	break;
+			//}
+			string highscore_str = line.substr(6);
+			highScore = stoi(highscore_str);
+		}
+		scores.close();		
+		
+	}
+	//Display failure message if cannot find file
+	else std::cout << "Error loading file!";
+	ofstream newScore("scores.txt");
+	if (newScore.is_open()) {
+		if (curScore > highScore) {
+			std::cout << "New high score!! Score: " << curScore << endl;
+			std::cout << "Enter your initials ie. 'XXX': " << endl;
+			std::cin >> initials;
+			if (initials.length() < 3) {
+				while (initials.length() < 3) {
+					std::cout << "Please Enter 3 Characters for your initials" << endl;
+					std::cin >> initials;
+				}
+			}
+			newScore << initials << " : " << curScore <<  endl;
+		}
+		newScore.close();
+	}	
+	else std::cout << "Error loading file!";
+}
+//Display High Scores
+void displayScore() {
+	string line;
+	ifstream scores("scores.txt"); //Text file in program location
+	if (scores.is_open()) {
+
+		//Read Text file, line by line
+		while (getline(scores, line)) {
+
+			std::cout << "\nCurrent High Score: " << line << endl;
+			scores.close();
+
+		}
+	}
+}
+int main()
+{
+	srand(time(NULL)); //initialize time for random numbers
+	int playerCount = 0;
+	int winScore = 10000;
+	bool win = false;
+	int playerScore[100] = { 0 };
+	int turnRolls[6];
+	int reRoll[] = { 0 };
+
+	//Display Rules
+	ruleText();
+
+	//Display Highscore
+	displayScore();
+
+	//Need two players to start
+	while(playerCount < 2) {
+
+		std::cout << "\nEnter number of players: " << endl;
+		std::cin >> playerCount;
+		if (playerCount < 2) {
+			std::cout << "Two or more players are required, please add more players." << endl;
+		}
+	}
+	std::cout << "Let's Play!" << endl;
+	//Main game loop
+	while (win == false) {
+
+		//Player's Turn Loop
+		for (int p = 1; p < playerCount+1; ++p) {
+			std::cout << "****************************Player " << p << "'s turn!*****************************\n";
+			int turnScore = 0;
+			string enter;
+			int scoredDie = 0;
+			char numtoRoll;
+			int totalScore = 0;
+			//Carrying Scores over
+			int prevPlayerScore = playerScore[p];
+			//Rolling for the turn
+			for (int turnR = 0; turnR < 6; ++turnR) {
+				turnRolls[turnR] = roll(turnR);
+			}				
+			scoredDie = 0;				
+			totalScore = score(turnRolls, scoredDie, 6);				
+			turnScore = turnScore + totalScore;				
+			int unScored = 6 - scoredDie;
+
+			//FARKLE - Score 0
+			if (unScored == 6) {
+				std::cout << "Farkle!" << endl;
+				std::cout << "Unfortunately to scored a Farkle, you scored 0 this turn." << endl;
+				turnScore = 0;
+				continue;
+			}
+			//Scored all 6 die, Roll Again!
+			if (unScored == 0) {
+				std::cout << "You scored on all 6, you will roll again!" << endl;
+				scoredDie = 0;
+				int firstScore = turnScore;
+				for (int i = 0; i < 6; i++) {
+					reRoll[i] = roll(i);
+				}
+				int extraRollScore = score(reRoll, scoredDie, 6);
+				//Farkle on Re-roll.
+				if (scoredDie == 0) {
+					std::cout << "Farkle!" << endl;
+					std::cout << "Unfortunately to scored a Farkle, you scored 0 this turn." << endl;
+					p++;
+					turnScore = 0;
+					continue;
+				}
+				turnScore = firstScore + extraRollScore;
+				std::cout << "Turn score: " << turnScore << endl;
+				std::cout << "Player " << p << "'s score: " << playerScore[p] << endl;
+				break;
+			}				
+								
+			int reRollScore = 0;				
+			unScored = 6 - scoredDie;
+			cout << "Current turn score: " << turnScore << endl;
+
+			//Re-Rolling unscored die
+			cout << "You can re-roll " << unScored << " dice." << endl;
+			cout << "Do you want to re-roll? Press n if you do not.\n";
+			cin >> numtoRoll;
+			while (numtoRoll != 'n' && numtoRoll != 'y' && numtoRoll != 'Y' && numtoRoll != 'N') {
+
+				cout << "You have a maximum of " << unScored << " non-scoring dice to re-roll." << endl;
+				cout << "Do you want to re-roll?" << endl;
+				cin >> numtoRoll;
+			}
+			//Skipping the re-roll
+			if (numtoRoll == 'n' | numtoRoll == 'N') {
+				playerScore[p] = prevPlayerScore + turnScore;				
+			}
+			//Scoring the re-roll
+			else {
+				for (int i = 0; i < unScored; i++) {
+					reRoll[i] = roll(i);
+				}
+				reRollScore = score(reRoll, scoredDie, unScored);
+					
+
+				std::cout << "Re-roll Score: " << reRollScore << endl;
+				turnScore = turnScore + reRollScore;
+				std::cout << "turnScore: " << turnScore << endl;					
+			}							
+
+			playerScore[p] = prevPlayerScore + turnScore;
+			std::cout << "Player " << p <<"'s score: " << playerScore[p]<< endl;
+			
+
+			//Winning over 10,000p
+			if (playerScore[p] > 10000) {
+				int winScore = playerScore[p];
+				std::cout << "Player " << p << " Wins!!" << endl;
+				highScores(winScore);
+				win = true;
+				break;
+			}		
+		}
+	}
+}
+
+'''
 
 
 
