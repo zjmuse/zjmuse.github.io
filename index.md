@@ -594,6 +594,225 @@ def simplemoving(low, high):
         run(host='localhost', port=8080)
 
 ```
+#Design
 [![Alt text](https://img.youtube.com/vi/_BsOKr0SVdE/0.jpg)](https://www.youtube.com/watch?v=_BsOKr0SVdE)
+```java
+
+/**
+ *
+ * @author Zach Muse
+ * IT145-1672
+ * SNHU
+ */
+import java.util.Scanner;
+import java.security.MessageDigest;
+
+public class ZooAuthentication {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    public static String md5Hash(String userPW) throws Exception {
+                String original = userPW;  //Replace "password" with the actual password inputted by the user
+		String md5PW ="";                
+                MessageDigest md = MessageDigest.getInstance("MD5");
+		md.update(original.getBytes());
+		byte[] digest = md.digest();
+                StringBuffer sb = new StringBuffer();
+		for (byte b : digest) {
+			sb.append(String.format("%02x", b & 0xff));
+		}                
+		md5PW = sb.toString();                
+                
+                return md5PW;
+    }
+    public static String askPW(){
+        Scanner scnr = new Scanner(System.in);
+        String userPW;
+        System.out.println("Password: ");
+        
+        return userPW = scnr.nextLine();
+    }
+    public static int Attempts(int attemptNum){
+        int userAttempts = attemptNum;
+        
+        userAttempts = attemptNum + 1;
+                    System.out.println("Password is invalid. Try again, you have " + (3 - userAttempts) + " remaining");                    
+                    return userAttempts;
+    }   
+    public static void printAdmin(){
+        System.out.println("Hello, System Admin!\n" +
+    "\n" + "As administrator, you have access to the zoo's main computer system.  This allows you "
+         + "to monitor users in the system and their roles.");
+    }
+    public static void printVet(){
+        System.out.println("Hello, Veterinarian!\n" +
+    "\n" + "As veterinarian, you have access to all of the animals' health records. This allows you "
+         + "to view each animal's medical history and current treatments/illnesses (if any), and to maintain a vaccination log.");
+    }
+    public static void printZooKeeper(){
+        System.out.println("Hello, Zookeeper!\n" +
+    "\n" + "As zookeeper, you have access to all of the animals' information and their daily monitoring logs. "
+         + "This allows you to track their feeding habits, habitat conditions, and general welfare.");
+        System.out.println("Please Select a Task:");
+        System.out.println("1: Animal Information");
+        System.out.println("2: Daily Logs");
+    }
+    public static void launchAnimals(){
+        System.out.println("Hello, Zookeeper!\n" +
+    "\n" + "Here is the animal information: \n");
+        System.out.println("Current animal numbers: 23");
+        System.out.println("Current sick animals: 0");
+        System.out.println("Current healthy animals: 23");        
+    }
+    public static void dailyLogs(){
+        System.out.println("Hello, Zookeeper!\n" +
+    "\n" + "Here are the daily logs: \n");
+        System.out.println("Elephants: ");
+        System.out.println("Elephants were fed, given medicine, and washed. \n");
+        System.out.println("Tigers: ");
+        System.out.println("Lilly the tiger had a broken claw, it was clipped back and cleaned. ");
+    }
+    public static void systemLogs(){
+        System.out.println("Hello, Admin!\n" +
+    "\n" + "Here are the system logs: \n");
+        System.out.println("Users onlne: 9");
+        System.out.println("Vets: 3");
+        System.out.println("Zookeepers: 3");
+        System.out.println("Admins: 3");
+    }
+    public static void healthRecords(){
+        System.out.println("Hello, Doctor!\n" +
+    "\n" + "Here are the bealtb records: \n");
+        System.out.println("Elephants: ");
+        System.out.println("Elephant #2 was given medicine for foot \n");
+        System.out.println("Tigers: ");
+        System.out.println("Tiger #1 had a broken claw, it was clipped back and cleaned. "
+        		+ "Tiger #3: sedated and performed a teeth cleaning");
+    }
+        
+    public static void main(String[] args) throws Exception {
+        
+    Scanner scnr = new Scanner(System.in);
+    String userPW = "";
+    String userName= "";
+    int userAttempts = 0;    
+    String userInput;
+    final String role1 = "Zookeeper";
+    final String role2 = "Veterinarian";
+    final String role3 = "Admin";
+    final int maxUsers = 7;
+    final String logOut = "log out";
+        
+    Boolean userAccess = false; /// Allows user to progress
+    String md5PW;
+    ///////////////////////////////USERS////////////////////
+    String [] user = new String[7];
+    user[0] = "griffin.keyes";
+    user[1] = "rosario.dawson";            
+    user[2] = "bernie.gorilla";
+    user[3] = "donald.monkey";
+    user[4] = "jerome.grizzlybear";
+    user[5] = "bruce.grizzlybear";
+    user[6] = "admin";
+    ///////////////////////////////HASHED PW///////////////
+    String [] hash = new String [7];
+    hash[0] = "108de81c31bf9c622f76876b74e9285f";
+    hash[1] = "3e34baa4ee2ff767af8c120a496742b5";
+    hash[2] = "a584efafa8f9ea7fe5cf18442f32b07b";
+    hash[3] = "17b1b7d8a706696ed220bc414f729ad3";
+    hash[4] = "3adea92111e6307f8f2aae4721e77900";
+    hash[5] = "0d107d09f5bbe40cade3de5c71e9e9b7";
+    hash[6] = "21232F297A57A5A743894A0E4A801FC3";
+    ///////////////////////////////ROLES////////////////////
+    String [] role = new String [3];
+    role[0] = "Zookeeper";
+    role[1] = "Veterinarian";
+    role[2] = "Admin";
+    String currentRole = "";
+    ///////////////////////////USERROLESS///////////////////
+    String [] userRole = new String [7];
+    userRole[0] = role[0];
+    userRole[1] = role[2];
+    userRole[2] = role[1];
+    userRole[3] = role[0];
+    userRole[4] = role[1];
+    userRole[5] = role[2];
+    userRole[6] = role[2];
+    
+    System.out.println("Username: ");
+    userName = scnr.nextLine();
+    userPW = askPW();
+    md5PW = md5Hash(userPW);
+    //while (userAccess != true) {
+    while (userAttempts < 3 || userAccess == false) {               
+        for (int i=0; i < 7; ++i){            
+            if (userName.equalsIgnoreCase(user[i])){                
+                while (userAccess == false) {                    
+                    if (md5PW.equals(hash[i])){
+                        System.out.println("Access granted.");                        
+                        currentRole = userRole[i];                        
+                        userAccess = true;
+                        break;                                               
+                    }
+                    else {
+                        userAttempts = Attempts(userAttempts);                                                                                    
+                        userPW = askPW();
+                        md5PW = md5Hash(userPW);
+                        if (userAttempts == 3){
+                            break;
+                        }
+                    }
+                } 
+            }
+            else {
+                if (userAccess == false){
+                    System.out.println("Error - Username not found.");
+                    System.out.println("Please contact System Administration to set up new accounts. If an error, please try again.");
+                    userAttempts = 3;
+                    break;
+                }
+            }
+       }
+       if (userAttempts == 3){
+           System.out.println("System Exiting: Goodbye!");
+           break;
+       }
+       else if (userAccess == true) {
+           break;
+       }       
+    }
+    if (userAccess == true) {                   ///Checks to make sure User has access
+        System.out.println("Welcome " +userName + ", your role is " + currentRole + ".");
+        System.out.println("");
+        if (currentRole.equals(role[2])){
+            printAdmin();
+        }
+        else if (currentRole.equals(role[1])){
+            printVet();
+        }
+        else if (currentRole.equals(role[0])){
+            printZooKeeper();
+        }      
+      }
+    while (userAccess == true) { // User stays logged in unless typing "log out"
+        System.out.println();
+        System.out.println("Type \"log out\" to exit.");
+        userInput = scnr.nextLine();
+        if (userInput.equals(logOut)){
+            userAccess = false;
+            break;        
+        }
+        if (userInput.equals("1")) {
+        	launchAnimals();       	
+        }
+        if (userInput.equals("2")) {
+        	dailyLogs();
+        }
+    }
+   }    
+}
+```
 
 
