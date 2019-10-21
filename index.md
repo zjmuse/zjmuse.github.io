@@ -1,6 +1,6 @@
 # Welcome to Zach Muse's CS-499 ePortfolio!
 
- ### The Journey
+### The Journey
  
   Even though I have been out of school for about 10 years and in a career not related to Computer Science, I decided I wanted to go back and improve myself and provide a better life for my family. I originally went to school for Computer Aided Design/Drafting and was in that career field for 13 years before deciding I need to move on. Though, this year and summer have been an extreme struggle for me, as I went through a house sale, a house rehabilitation, a new baby born, and a starting a new career within all this timeframe of finishing schooling.  The journey has so far taken close to 3 years now but managing school and having three children to provide for has taken most of my sanity. I have enjoyed the process and the classes I have taken and will be pursuing a career in Software Development.
 	
