@@ -6,6 +6,14 @@
   The github experience has proven beneficial as a lot of prospective careers are looking for some sort of source tree/github/bitbucket-type experience. 
 # Algorithms
 [![Alt text](https://img.youtube.com/vi/Ky7Wm0DV6wI/0.jpg)](https://www.youtube.com/watch?v=Ky7Wm0DV6wI)
+
+   For the algorithms portion of the project, I chose to modify the game that I made for IT-312, the Advanced Programming class. I took the class in the spring of this year and it went well for me. The project was to choose from a list of predefined games and work out how to code them. The game is one of rolling multiple dice with a point system and is called Farkle. I was able complete the original project as intended and it worked just fine.
+   
+   I have chosen this coding project because I am very proud of it. It is the most complex project that I have written front to back without a starter piece of code that was given to add-on to. It is also my first real C++ project on my own as well. So, the project is special in my heart as it works as intended and shows my real hard work. The enhancement that I have included was a way to keep track of the highest scores that won the game. It loads the highest scores from an external file and checks whether the current high score is greater than the saved highest score and if it is then it will write the new highest score to the file.
+   
+   The planned enhancements that I laid out in the beginning of the class have been meet as it saves the high scores to an external file and is able to retrieve it. I made further work on also getting the program to save the same of the player along with the score so it has a more arcade high score feel to it. I have it saving the name and score within one line of the text file, when it retreives the score, the algorithm drops the first 5 characters which would hold the intials of the player. It then saves the score as an INT to be able to compare to the scores later. The largest struggle for this was figuring out the best way to save the name and the score in the same file and be able to retreive it for comparison. Meaning, I wasn't sure how I should save both pieces of data, but a chose a simple approach. Saving the initials forces three characters as I did not want to run into errors of retreiving the wrong scores. The rest of the project was just refreshing myself on how to load and save to external files with C++ but I was able to research that quickly.
+
+
 ### Code:
 ```c++
 // farkle.cpp : This file contains the 'main' function. Program execution begins and ends there.
@@ -594,8 +602,11 @@ def simplemoving(low, high):
         run(host='localhost', port=8080)
 
 ```
-#Design
+# Design
+
 [![Alt text](https://img.youtube.com/vi/_BsOKr0SVdE/0.jpg)](https://www.youtube.com/watch?v=_BsOKr0SVdE)
+
+### Code:
 ```java
 
 /**
