@@ -350,6 +350,7 @@ int main()
 
 
 # Database
+[![Alt text](https://img.youtube.com/vi/N_KMR_PlxH0/0.jpg)](https://www.youtube.com/watch?v=N_KMR_PlxH0)
    For the databases section of enhancements, I have chosen to enhance the MongoDB and RestAPI project from CS-340. I have chosen this project because it was definitely the most complex database project that I have completed here at SNHU. My SQL classes were a bit more basic and I thought MongoDB was interesting because how it is similar to SQL but how it takes up a notch in the query formation. Also, with the RestfulAPI with Python it is a combination of many classes that I have taken here at SNHU in one project.</p>
 	
    The final for the class was broken up into many files that were to be submitted for each section of the final. So, only a few queries were in each file or not connected to the Rest API at all. With this enhancement I have chosen to combine the final into one final and have it all work within the Rest API. This involved changing a bit of how the coding worked, and adding routing for each of the methods so that they can be addressable through an URL address.</p> 
@@ -593,17 +594,6 @@ def simplemoving(low, high):
         run(host='localhost', port=8080)
 
 ```
-
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
+[![Alt text](https://img.youtube.com/vi/_BsOKr0SVdE/0.jpg)](https://www.youtube.com/watch?v=_BsOKr0SVdE)
 
 
