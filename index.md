@@ -5,6 +5,7 @@
 	
   The github experience has proven beneficial as a lot of prospective careers are looking for some sort of source tree/github/bitbucket-type experience. 
 # Algorithms
+[![Alt text](https://img.youtube.com/vi/Ky7Wm0DV6wI/0.jpg)](https://www.youtube.com/watch?v=Ky7Wm0DV6wI)
 ### Code:
 ```c++
 // farkle.cpp : This file contains the 'main' function. Program execution begins and ends there.
