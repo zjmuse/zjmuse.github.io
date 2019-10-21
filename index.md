@@ -10,6 +10,7 @@
    ### -Zach Muse
   
 # Algorithms
+### Code Review
 [![Alt text](https://img.youtube.com/vi/Ky7Wm0DV6wI/0.jpg)](https://www.youtube.com/watch?v=Ky7Wm0DV6wI)
 
    For the algorithms portion of the project, I chose to modify the game that I made for IT-312, the Advanced Programming class. I took the class in the spring of this year and it went well for me. The project was to choose from a list of predefined games and work out how to code them. The game is one of rolling multiple dice with a point system and is called Farkle. I was able complete the original project as intended and it worked just fine.
@@ -363,6 +364,7 @@ int main()
 
 
 # Database
+### Code Review
 [![Alt text](https://img.youtube.com/vi/N_KMR_PlxH0/0.jpg)](https://www.youtube.com/watch?v=N_KMR_PlxH0)
 
 
@@ -616,7 +618,7 @@ To improve the software, I wanted to expand upon the Zoo computer system to offe
 
 During the process of implementing the enhancements, I was trying to figure out where and what the best options were to do the tasks. Is it strictly a text based “adventure,” or should it be something else? I chose to make it more of a text-based project, with each role being able to see their options that they have be allowed to do and be able to access these pages. During the process, my data actually corrupted, and I had to load from a backup and continue working but I was able to recover the project. I liked the idea of having the zoo data computer system as operational and I think this makes it more fun to load up and run rather than just testing out the MD5 hashing function, a more text based simulation game. 
 
-
+### Code Review
 [![Alt text](https://img.youtube.com/vi/_BsOKr0SVdE/0.jpg)](https://www.youtube.com/watch?v=_BsOKr0SVdE)
 
 ### Code:
