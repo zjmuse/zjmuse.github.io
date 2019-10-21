@@ -1,9 +1,13 @@
 ### Welcome to Zach Muse's CS-499 ePortfolio!
 
  	### The Journey
-  Even though I have been out of school for about 10 years and in a career not related to Computer Science, I decided I wanted to go back and improve myself and provide a better life for my family. Though this year and summer have been an extreme struggle for me, as I went through a house sale, a house rehabilitation, and a new baby born within all this time frame of finishing schooling.  The journey has so far taken close to 3 years now but managing school and having three children to provide for has taken most of my sanity. I have enjoyed the process and the classes I have taken and will be pursuing a career in Software Development.
+  Even though I have been out of school for about 10 years and in a career not related to Computer Science, I decided I wanted to go back and improve myself and provide a better life for my family. I originally went to school for Computer Aided Design/Drafting and was in that career field for 13 years before deciding I need to move on. Though, this year and summer have been an extreme struggle for me, as I went through a house sale, a house rehabilitation, a new baby born, and a starting a new career within all this timeframe of finishing schooling.  The journey has so far taken close to 3 years now but managing school and having three children to provide for has taken most of my sanity. I have enjoyed the process and the classes I have taken and will be pursuing a career in Software Development.
 	
-  The github experience has proven beneficial as a lot of prospective careers are looking for some sort of source tree/github/bitbucket-type experience. 
+   The capstone course is a good introduction on time management and how to get everything completed with a set of guidelines and a timeframe. Having free reign on this type of project is a good example to employers of the future that you can relate to illustrate your project management and goal completion. The github experience has proven beneficial as a lot of prospective careers are looking for some sort of source tree/github/bitbucket-type experience.I have been successful during the period of this class of securing a Sofware Developer position and just started this passed week. Already, I have learned so much in the little timeframe that I have been there. I am thankful for taking these steps in my life and glad I submitted the application to schooling even though it flipped my world upside down.
+   
+   Thank you for taking the time to look through a sample of my work.
+   ### -Zach Muse
+  
 # Algorithms
 [![Alt text](https://img.youtube.com/vi/Ky7Wm0DV6wI/0.jpg)](https://www.youtube.com/watch?v=Ky7Wm0DV6wI)
 
